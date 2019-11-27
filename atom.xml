@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>the next page</title>
+  
+  <subtitle>笑一个吧</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://xiaofeng333.github.io/"/>
+  <updated>2019-11-27T09:36:43.242Z</updated>
+  <id>https://xiaofeng333.github.io/</id>
+  
+  <author>
+    <name>the next page</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo博客的搭建</title>
+    <link href="https://xiaofeng333.github.io/2019/11/27/hexo-bo-ke-de-da-jian/"/>
+    <id>https://xiaofeng333.github.io/2019/11/27/hexo-bo-ke-de-da-jian/</id>
+    <published>2019-11-27T09:27:28.000Z</published>
+    <updated>2019-11-27T09:36:43.242Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文旨在讲述个人使用hexo及GithubPages搭建的过程。&lt;/p&gt;
+&lt;p&gt;主要参考&lt;a href=&quot;https://www.simon96.online/2018/10/12/hexo-tutorial/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="hexo" scheme="https://xiaofeng333.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>flyway的学习</title>
+    <link href="https://xiaofeng333.github.io/2019/11/21/flyway-de-xue-xi/"/>
+    <id>https://xiaofeng333.github.io/2019/11/21/flyway-de-xue-xi/</id>
+    <published>2019-11-21T06:39:00.000Z</published>
+    <updated>2019-11-25T10:20:13.449Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;数据库可以像代码一样, 使用flyway进行良好的版本控制。&lt;/p&gt;
+&lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="database" scheme="https://xiaofeng333.github.io/tags/database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gRPC的学习</title>
+    <link href="https://xiaofeng333.github.io/2019/11/20/grpc-de-xue-xi/"/>
+    <id>https://xiaofeng333.github.io/2019/11/20/grpc-de-xue-xi/</id>
+    <published>2019-11-20T12:33:45.000Z</published>
+    <updated>2019-11-25T12:38:20.601Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h4&gt;&lt;p&gt;gRPC为Google的rpc实现, 使用proto buffer作为接口定义语言(Interface Definition
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="rpc" scheme="https://xiaofeng333.github.io/tags/rpc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>proto buffer 学习</title>
+    <link href="https://xiaofeng333.github.io/2019/11/14/proto-buffer-xue-xi/"/>
+    <id>https://xiaofeng333.github.io/2019/11/14/proto-buffer-xue-xi/</id>
+    <published>2019-11-14T08:54:57.000Z</published>
+    <updated>2019-11-20T11:52:49.333Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;protobuffer是与语言无关、与平台无关、可扩展的数据格式,  可用于数据通信及存储等,
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="data-serialization" scheme="https://xiaofeng333.github.io/tags/data-serialization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python-菜鸟教程</title>
+    <link href="https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/"/>
+    <id>https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/</id>
+    <published>2019-05-19T10:10:55.000Z</published>
+    <updated>2019-11-25T11:00:15.577Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;注释&lt;/p&gt;
+&lt;p&gt;以#开头, 或 ‘’’ 和
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="https://xiaofeng333.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MAVEN资源文件变量替换</title>
+    <link href="https://xiaofeng333.github.io/2019/05/19/maven-zi-yuan-wen-jian-bian-liang-ti-huan/"/>
+    <id>https://xiaofeng333.github.io/2019/05/19/maven-zi-yuan-wen-jian-bian-liang-ti-huan/</id>
+    <published>2019-05-19T10:10:55.000Z</published>
+    <updated>2019-11-25T10:58:38.479Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;项目在不同环境下部署时，使用的属性是不同的，这时可以使用MAVEN进行资源文件的过滤，在打包时传递参数，打出适合部署在对应环境的资源文件。&lt;/p&gt;
+&lt;p&gt;如定义了如下资源文件:&lt;/p&gt;
+&lt;pre class=&quot; language-properties&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JAVA" scheme="https://xiaofeng333.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker实操</title>
+    <link href="https://xiaofeng333.github.io/2019/04/21/docker-shi-cao/"/>
+    <id>https://xiaofeng333.github.io/2019/04/21/docker-shi-cao/</id>
+    <published>2019-04-21T12:30:43.000Z</published>
+    <updated>2019-05-20T14:16:30.243Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;DOCKER安装&quot;&gt;&lt;a href=&quot;#DOCKER安装&quot; class=&quot;headerlink&quot; title=&quot;DOCKER安装&quot;&gt;&lt;/a&gt;DOCKER安装&lt;/h4&gt;&lt;p&gt;在菜鸟教程中详细提供了linux，windows, mac下的安装操作。&lt;/p&gt;
+&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JAVA" scheme="https://xiaofeng333.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LDAP学习与介绍</title>
+    <link href="https://xiaofeng333.github.io/2019/04/04/ldap-xue-xi-yu-jie-shao/"/>
+    <id>https://xiaofeng333.github.io/2019/04/04/ldap-xue-xi-yu-jie-shao/</id>
+    <published>2019-04-04T15:23:48.000Z</published>
+    <updated>2019-04-07T15:40:42.421Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h4&gt;&lt;p&gt;LDAP是轻量目录访问协议(Lightweight Directory Access
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JAVA" scheme="https://xiaofeng333.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springsecurity参考手册</title>
+    <link href="https://xiaofeng333.github.io/2019/03/30/springsecurity-can-kao-shou-ce/"/>
+    <id>https://xiaofeng333.github.io/2019/03/30/springsecurity-can-kao-shou-ce/</id>
+    <published>2019-03-30T08:11:58.000Z</published>
+    <updated>2019-04-09T13:45:01.729Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;创建java配置&quot;&gt;&lt;a href=&quot;#创建java配置&quot; class=&quot;headerlink&quot; title=&quot;创建java配置&quot;&gt;&lt;/a&gt;创建java配置&lt;/h3&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JAVA" scheme="https://xiaofeng333.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spring security总结</title>
+    <link href="https://xiaofeng333.github.io/2019/03/10/spring-security-zong-jie/"/>
+    <id>https://xiaofeng333.github.io/2019/03/10/spring-security-zong-jie/</id>
+    <published>2019-03-10T08:26:09.000Z</published>
+    <updated>2019-11-25T10:36:32.557Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h4&gt;&lt;p&gt;应用程序安全性可以归结为差不多两个独立的问题：身份验证（你是谁？）和授权（你可以做什么？）。&lt;/p&gt;
+&lt;p&gt;Spring
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JAVA" scheme="https://xiaofeng333.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker开发指南阅读总结</title>
+    <link href="https://xiaofeng333.github.io/2019/02/25/docker-kai-fa-zhi-nan-yue-du-zong-jie/"/>
+    <id>https://xiaofeng333.github.io/2019/02/25/docker-kai-fa-zhi-nan-yue-du-zong-jie/</id>
+    <published>2019-02-25T15:03:26.000Z</published>
+    <updated>2019-06-13T15:47:03.306Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="容器" scheme="https://xiaofeng333.github.io/tags/%E5%AE%B9%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MAVEN实战阅读总结</title>
+    <link href="https://xiaofeng333.github.io/2019/02/17/maven-shi-zhan-yue-du-zong-jie/"/>
+    <id>https://xiaofeng333.github.io/2019/02/17/maven-shi-zhan-yue-du-zong-jie/</id>
+    <published>2019-02-17T12:40:27.000Z</published>
+    <updated>2019-02-24T15:41:04.584Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="工具" scheme="https://xiaofeng333.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea好用的快捷键</title>
+    <link href="https://xiaofeng333.github.io/2019/01/27/idea-hao-yong-de-kuai-jie-jian/"/>
+    <id>https://xiaofeng333.github.io/2019/01/27/idea-hao-yong-de-kuai-jie-jian/</id>
+    <published>2019-01-27T13:29:20.000Z</published>
+    <updated>2019-02-17T12:56:01.115Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;定位到类的位置&quot;&gt;&lt;a href=&quot;#定位到类的位置&quot; class=&quot;headerlink&quot; title=&quot;定位到类的位置&quot;&gt;&lt;/a&gt;定位到类的位置&lt;/h5&gt;&lt;p&gt;使用&lt;code&gt;alt+F1&lt;/code&gt;，弹出&lt;code&gt;Select
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="工具" scheme="https://xiaofeng333.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钗头凤</title>
+    <link href="https://xiaofeng333.github.io/2018/12/31/chai-tou-feng/"/>
+    <id>https://xiaofeng333.github.io/2018/12/31/chai-tou-feng/</id>
+    <published>2018-12-31T13:42:54.000Z</published>
+    <updated>2018-12-31T14:06:38.166Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;钗头凤·红酥手-陆游&quot;&gt;&lt;a href=&quot;#钗头凤·红酥手-陆游&quot; class=&quot;headerlink&quot; title=&quot;钗头凤·红酥手   陆游&quot;&gt;&lt;/a&gt;钗头凤·红酥手  
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="其他" scheme="https://xiaofeng333.github.io/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+</feed>
