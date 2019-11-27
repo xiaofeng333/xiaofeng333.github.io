@@ -119,33 +119,6 @@
   </entry>
   
   <entry>
-    <title>MAVEN资源文件变量替换</title>
-    <link href="https://xiaofeng333.github.io/2019/05/19/maven-zi-yuan-wen-jian-bian-liang-ti-huan/"/>
-    <id>https://xiaofeng333.github.io/2019/05/19/maven-zi-yuan-wen-jian-bian-liang-ti-huan/</id>
-    <published>2019-05-19T10:10:55.000Z</published>
-    <updated>2019-11-25T10:58:38.479Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;项目在不同环境下部署时，使用的属性是不同的，这时可以使用MAVEN进行资源文件的过滤，在打包时传递参数，打出适合部署在对应环境的资源文件。&lt;/p&gt;
-&lt;p&gt;如定义了如下资源文件:&lt;/p&gt;
-&lt;pre class=&quot; language-properties&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="JAVA" scheme="https://xiaofeng333.github.io/tags/JAVA/"/>
-    
-  </entry>
-  
-  <entry>
     <title>python-菜鸟教程</title>
     <link href="https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/"/>
     <id>https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/</id>
@@ -169,6 +142,33 @@
     
     
       <category term="python" scheme="https://xiaofeng333.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MAVEN资源文件变量替换</title>
+    <link href="https://xiaofeng333.github.io/2019/05/19/maven-zi-yuan-wen-jian-bian-liang-ti-huan/"/>
+    <id>https://xiaofeng333.github.io/2019/05/19/maven-zi-yuan-wen-jian-bian-liang-ti-huan/</id>
+    <published>2019-05-19T10:10:55.000Z</published>
+    <updated>2019-11-25T10:58:38.479Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;项目在不同环境下部署时，使用的属性是不同的，这时可以使用MAVEN进行资源文件的过滤，在打包时传递参数，打出适合部署在对应环境的资源文件。&lt;/p&gt;
+&lt;p&gt;如定义了如下资源文件:&lt;/p&gt;
+&lt;pre class=&quot; language-properties&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JAVA" scheme="https://xiaofeng333.github.io/tags/JAVA/"/>
     
   </entry>
   
