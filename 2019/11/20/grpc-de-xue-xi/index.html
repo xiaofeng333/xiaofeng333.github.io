@@ -449,14 +449,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    765
+                    850
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 				
@@ -530,7 +530,11 @@
 <li>Channel credentials</li>
 <li>Call Credentials</li>
 </ul>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://www.grpc.io/docs/" target="_blank" rel="noopener">官方文档</a></p>
+<p>java的认证与授权官方推荐OpenSSl,  <a href="https://github.com/grpc/grpc-java/blob/master/SECURITY.md#transport-security-tls" target="_blank" rel="noopener">security</a>。</p>
+<h4 id="Error-Handling"><a href="#Error-Handling" class="headerlink" title="Error Handling"></a>Error Handling</h4><h5 id="Standard-error-model"><a href="#Standard-error-model" class="headerlink" title="Standard error model"></a>Standard error model</h5><p>发生错误时, gRPC返回错误的status codes及可选的错误信息字符串(提供更详细的信息)。</p>
+<h5 id="Richer-error-model"><a href="#Richer-error-model" class="headerlink" title="Richer error model"></a>Richer error model</h5><p>standard error model与grpc采用的数据交互形式无关, 但局限性较大, 不能详细描述错误信息。</p>
+<p><a href="https://cloud.google.com/apis/design/errors#error_model" target="_blank" rel="noopener">错误模型</a></p>
+<h4 id="BenchMarking"><a href="#BenchMarking" class="headerlink" title="BenchMarking"></a>BenchMarking</h4><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://www.grpc.io/docs/" target="_blank" rel="noopener">官方文档</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -809,28 +813,38 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/21/flyway-de-xue-xi/">
+                <a href="/2019/11/20/grafana/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="flyway的学习">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="grafana">
                         
-                        <span class="card-title">flyway的学习</span>
+                        <span class="card-title">grafana</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言数据库可以像代码一样, 使用flyway进行良好的版本控制。
-介绍空数据库-最简单的方式
-flyway找不到schema history table时, 将创建默认名为flyway_schema_history的表。
+                            install在mac环境下安装。
 
-flyway随后
+安装
+
+brew update
+brew install grafana
+
+升级
+
+brew update
+brew reinstall grafana
+
+启动
+
+brew services start
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
                         </span>
                         <span class="publish-author">
                             
@@ -843,8 +857,8 @@ flyway随后
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/database/">
-                        <span class="chip bg-color">database</span>
+                    <a href="/tags/%E7%9B%91%E6%8E%A7/">
+                        <span class="chip bg-color">监控</span>
                     </a>
                     
                 </div>
@@ -1043,7 +1057,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13k</span>&nbsp;字
+                class="white-color">16.4k</span>&nbsp;字
             
             
             
