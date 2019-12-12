@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaofeng333.github.io/"/>
-  <updated>2019-12-04T09:00:50.744Z</updated>
+  <updated>2019-12-12T12:38:17.633Z</updated>
   <id>https://xiaofeng333.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>kubernetes初入门</title>
-    <link href="https://xiaofeng333.github.io/2019/12/04/kubernetes-chu-ru-men/"/>
-    <id>https://xiaofeng333.github.io/2019/12/04/kubernetes-chu-ru-men/</id>
-    <published>2019-12-04T08:37:02.000Z</published>
-    <updated>2019-12-04T09:00:50.744Z</updated>
+    <title>kubernetes之安装与配置</title>
+    <link href="https://xiaofeng333.github.io/2019/12/11/kubernetes-zhi-an-zhuang-yu-pei-zhi/"/>
+    <id>https://xiaofeng333.github.io/2019/12/11/kubernetes-zhi-an-zhuang-yu-pei-zhi/</id>
+    <published>2019-12-11T06:30:08.000Z</published>
+    <updated>2019-12-12T12:38:17.633Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,34 @@
       
         
         
-          &lt;h3 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h3&gt;&lt;p&gt;在k8s中, Service(服务)是分布式集群架构的核心,
+          &lt;p&gt;本文为观看&lt;code&gt;Kubernetes权威指南-第二版.pdf&lt;/code&gt;第二章的笔记。&lt;/p&gt;
+&lt;h3 id=&quot;简单的安装方式&quot;&gt;&lt;a href=&quot;#简单的安装方式&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="kubernetes" scheme="https://xiaofeng333.github.io/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes之初入门</title>
+    <link href="https://xiaofeng333.github.io/2019/12/04/kubernetes-zhi-chu-ru-men/"/>
+    <id>https://xiaofeng333.github.io/2019/12/04/kubernetes-zhi-chu-ru-men/</id>
+    <published>2019-12-04T08:37:02.000Z</published>
+    <updated>2019-12-12T11:57:14.914Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文为观看&lt;code&gt;Kubernetes权威指南-第二版.pdf&lt;/code&gt;第一章的笔记, 主要是k8s的核心概念。&lt;/p&gt;
+&lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot;
         
       
     
@@ -92,31 +119,6 @@
   </entry>
   
   <entry>
-    <title>maven小知识-classifier</title>
-    <link href="https://xiaofeng333.github.io/2019/12/02/maven-xiao-zhi-shi-classifier/"/>
-    <id>https://xiaofeng333.github.io/2019/12/02/maven-xiao-zhi-shi-classifier/</id>
-    <published>2019-12-02T11:58:19.000Z</published>
-    <updated>2019-12-04T09:12:51.714Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;classifier&quot;&gt;&lt;a href=&quot;#classifier&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
-    
-  </entry>
-  
-  <entry>
     <title>maven plugin介绍</title>
     <link href="https://xiaofeng333.github.io/2019/12/02/maven-plugin-jie-shao/"/>
     <id>https://xiaofeng333.github.io/2019/12/02/maven-plugin-jie-shao/</id>
@@ -131,6 +133,31 @@
         
           &lt;p&gt;介绍工作中用到的maven插件, 会时常补全。&lt;/p&gt;
 &lt;h3 id=&quot;antrun-plugin&quot;&gt;&lt;a href=&quot;#antrun-plugin&quot; class=&quot;headerlink&quot; title=&quot;antrun plugin&quot;&gt;&lt;/a&gt;antrun
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>maven小知识-classifier</title>
+    <link href="https://xiaofeng333.github.io/2019/12/02/maven-xiao-zhi-shi-classifier/"/>
+    <id>https://xiaofeng333.github.io/2019/12/02/maven-xiao-zhi-shi-classifier/</id>
+    <published>2019-12-02T11:58:19.000Z</published>
+    <updated>2019-12-04T09:12:51.714Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;classifier&quot;&gt;&lt;a href=&quot;#classifier&quot; class=&quot;headerlink&quot;
         
       
     
@@ -195,6 +222,31 @@
   </entry>
   
   <entry>
+    <title>gRPC的学习</title>
+    <link href="https://xiaofeng333.github.io/2019/11/20/grpc-de-xue-xi/"/>
+    <id>https://xiaofeng333.github.io/2019/11/20/grpc-de-xue-xi/</id>
+    <published>2019-11-20T12:33:45.000Z</published>
+    <updated>2019-12-06T09:16:35.093Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h4&gt;&lt;p&gt;gRPC为Google的rpc实现, 使用proto buffer作为接口定义语言(Interface Definition
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="rpc" scheme="https://xiaofeng333.github.io/tags/rpc/"/>
+    
+  </entry>
+  
+  <entry>
     <title>grafana</title>
     <link href="https://xiaofeng333.github.io/2019/11/20/grafana/"/>
     <id>https://xiaofeng333.github.io/2019/11/20/grafana/</id>
@@ -224,31 +276,6 @@
   </entry>
   
   <entry>
-    <title>gRPC的学习</title>
-    <link href="https://xiaofeng333.github.io/2019/11/20/grpc-de-xue-xi/"/>
-    <id>https://xiaofeng333.github.io/2019/11/20/grpc-de-xue-xi/</id>
-    <published>2019-11-20T12:33:45.000Z</published>
-    <updated>2019-11-29T10:43:35.728Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h4&gt;&lt;p&gt;gRPC为Google的rpc实现, 使用proto buffer作为接口定义语言(Interface Definition
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="rpc" scheme="https://xiaofeng333.github.io/tags/rpc/"/>
-    
-  </entry>
-  
-  <entry>
     <title>proto buffer 学习</title>
     <link href="https://xiaofeng333.github.io/2019/11/14/proto-buffer-xue-xi/"/>
     <id>https://xiaofeng333.github.io/2019/11/14/proto-buffer-xue-xi/</id>
@@ -270,58 +297,6 @@
     
     
       <category term="data-serialization" scheme="https://xiaofeng333.github.io/tags/data-serialization/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>maven小知识-资源文件变量替换</title>
-    <link href="https://xiaofeng333.github.io/2019/05/19/maven-xiao-zhi-shi-zi-yuan-wen-jian-bian-liang-ti-huan/"/>
-    <id>https://xiaofeng333.github.io/2019/05/19/maven-xiao-zhi-shi-zi-yuan-wen-jian-bian-liang-ti-huan/</id>
-    <published>2019-05-19T10:10:55.000Z</published>
-    <updated>2019-12-04T09:17:50.333Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;项目在不同环境下部署时，使用的属性是不同的，这时可以使用MAVEN进行资源文件的过滤，在打包时传递参数，打出适合部署在对应环境的资源文件。&lt;/p&gt;
-&lt;p&gt;如定义了如下资源文件:&lt;/p&gt;
-&lt;pre class=&quot; language-properties&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spring boot maven plugin简介</title>
-    <link href="https://xiaofeng333.github.io/2019/05/19/spring-boot-maven-plugin-jian-jie/"/>
-    <id>https://xiaofeng333.github.io/2019/05/19/spring-boot-maven-plugin-jian-jie/</id>
-    <published>2019-05-19T10:10:55.000Z</published>
-    <updated>2019-12-04T09:20:18.980Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Spring-Boot-Maven-Plugin简介&quot;&gt;&lt;a href=&quot;#Spring-Boot-Maven-Plugin简介&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot Maven Plugin简介&quot;&gt;&lt;/a&gt;Spring
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
     
   </entry>
   
@@ -353,11 +328,36 @@
   </entry>
   
   <entry>
-    <title>MAVEN资源文件变量替换</title>
-    <link href="https://xiaofeng333.github.io/2019/05/19/maven-zi-yuan-wen-jian-bian-liang-ti-huan/"/>
-    <id>https://xiaofeng333.github.io/2019/05/19/maven-zi-yuan-wen-jian-bian-liang-ti-huan/</id>
+    <title>spring boot maven plugin简介</title>
+    <link href="https://xiaofeng333.github.io/2019/05/19/spring-boot-maven-plugin-jian-jie/"/>
+    <id>https://xiaofeng333.github.io/2019/05/19/spring-boot-maven-plugin-jian-jie/</id>
     <published>2019-05-19T10:10:55.000Z</published>
-    <updated>2019-11-25T10:58:38.479Z</updated>
+    <updated>2019-12-04T09:20:18.980Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Spring-Boot-Maven-Plugin简介&quot;&gt;&lt;a href=&quot;#Spring-Boot-Maven-Plugin简介&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot Maven Plugin简介&quot;&gt;&lt;/a&gt;Spring
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>maven小知识-资源文件变量替换</title>
+    <link href="https://xiaofeng333.github.io/2019/05/19/maven-xiao-zhi-shi-zi-yuan-wen-jian-bian-liang-ti-huan/"/>
+    <id>https://xiaofeng333.github.io/2019/05/19/maven-xiao-zhi-shi-zi-yuan-wen-jian-bian-liang-ti-huan/</id>
+    <published>2019-05-19T10:10:55.000Z</published>
+    <updated>2019-12-04T09:17:50.333Z</updated>
     
     <summary type="html">
     
@@ -375,33 +375,7 @@
     
     
     
-      <category term="JAVA" scheme="https://xiaofeng333.github.io/tags/JAVA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker实操</title>
-    <link href="https://xiaofeng333.github.io/2019/04/21/docker-shi-cao/"/>
-    <id>https://xiaofeng333.github.io/2019/04/21/docker-shi-cao/</id>
-    <published>2019-04-21T12:30:43.000Z</published>
-    <updated>2019-05-20T14:16:30.243Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;DOCKER安装&quot;&gt;&lt;a href=&quot;#DOCKER安装&quot; class=&quot;headerlink&quot; title=&quot;DOCKER安装&quot;&gt;&lt;/a&gt;DOCKER安装&lt;/h4&gt;&lt;p&gt;在菜鸟教程中详细提供了linux，windows, mac下的安装操作。&lt;/p&gt;
-&lt;h4
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="JAVA" scheme="https://xiaofeng333.github.io/tags/JAVA/"/>
+      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
     
   </entry>
   
@@ -528,6 +502,31 @@
     
     
       <category term="docker" scheme="https://xiaofeng333.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>maven实战阅读总结</title>
+    <link href="https://xiaofeng333.github.io/2019/02/17/maven-shi-zhan-yue-du-zong-jie/"/>
+    <id>https://xiaofeng333.github.io/2019/02/17/maven-shi-zhan-yue-du-zong-jie/</id>
+    <published>2019-02-17T12:40:27.000Z</published>
+    <updated>2019-12-04T09:17:32.986Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
     
   </entry>
   

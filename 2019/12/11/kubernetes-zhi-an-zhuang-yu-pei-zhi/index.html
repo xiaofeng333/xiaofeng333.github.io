@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="kubernetes初入门, java, linux, docker">
-    <meta name="description" content="基本知识在k8s中, Service(服务)是分布式集群架构的核心, 一个Service拥有如下关键特征。
+    <meta name="keywords" content="kubernetes之安装与配置, java, linux, docker">
+    <meta name="description" content="本文为观看Kubernetes权威指南-第二版.pdf第二章的笔记。
+简单的安装方式最简单的安装方式, 仍需修改各组件的启动参数, 才能完成kubernetes集群的配置。
 
-拥有一个唯一指定的名字。
-拥有一个虚拟IP(Cluster IP、Service IP或VIP)和端口号。
-能够提供某种远程服务能">
+安装etcd和kubernetes。
+yum install -">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>kubernetes初入门 | the next page</title>
+    <title>kubernetes之安装与配置 | the next page</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,13 +308,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        kubernetes初入门
+                        kubernetes之安装与配置
                     </div>
                 </div>
             </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-04
+                    2019-12-11
                 </div>
                 
 
@@ -451,14 +451,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    247
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 				
@@ -474,17 +474,209 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h3><p>在k8s中, Service(服务)是分布式集群架构的核心, 一个Service拥有如下关键特征。</p>
-<ul>
-<li>拥有一个唯一指定的名字。</li>
-<li>拥有一个虚拟IP(Cluster IP、Service IP或VIP)和端口号。</li>
-<li>能够提供某种远程服务能力。</li>
-<li>被映射到了提供这种服务的一组容器应用上。</li>
+                <p>本文为观看<code>Kubernetes权威指南-第二版.pdf</code>第二章的笔记。</p>
+<h3 id="简单的安装方式"><a href="#简单的安装方式" class="headerlink" title="简单的安装方式"></a>简单的安装方式</h3><p>最简单的安装方式, 仍需修改各组件的启动参数, 才能完成kubernetes集群的配置。</p>
+<ol>
+<li><p>安装etcd和kubernetes。</p>
+<pre class=" language-shell"><code class="language-shell">yum install -y etcd kubernetes</code></pre>
+</li>
+<li><p>修改配置文件。</p>
+<pre class=" language-shell"><code class="language-shell"># 将OPTIONS的内容设置为'--selinux-enabled=false --insecure-registry gcr.io'
+vim /etc/sysconfig/docker
+
+# 把--admission_control参数中的ServiceAccount删除
+vim /etc/kubernetes/apiserver</code></pre>
+</li>
+<li><p>按顺序启动所有服务。</p>
+<pre class=" language-shell"><code class="language-shell">systemctl start etcd
+systemctl start docker
+systemctl start kube-apiserver
+systemctl start kube-controller-manager
+systemctl start kube-scheduler
+systemctl start kubelet
+systemctl start kube-proxy</code></pre>
+</li>
+<li><p>至此单机版的kubernetes搭建完成。</p>
+</li>
+</ol>
+<h4 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h4><ul>
+<li><p>apiserver端口占用？</p>
+<p>默认为8080。</p>
+<p>修改<code>/etc/kubernetes/apiserver</code>里的配置<code>KUBE_API_PORT</code>。</p>
+<p>同时修改<code>kubectl</code>的映射<code>alias kubectl='kubectl -s http://localhost:8081'</code>。</p>
+</li>
 </ul>
-<p>给<code>pod</code>(其中运行了服务进程容器)贴上<code>label</code>(标签), 然后给相应的Service定义Label Selector(标签选择器), 这样就将service和pod关联了起来。</p>
-<p>pod运行在node(节点)的环境中, 通常在一个node中运行几百个pod。</p>
-<p>每个pod里运行一个pause容器, 其他为业务容器。所有业务容器共享pause容器的网络栈和volume挂载卷。</p>
-<p>label: 标签</p>
+<h3 id="通过二进制文件和手动配置启动参数安装"><a href="#通过二进制文件和手动配置启动参数安装" class="headerlink" title="通过二进制文件和手动配置启动参数安装"></a>通过二进制文件和手动配置启动参数安装</h3><p>下载地址为<a href="https://github.com/kubernetes/kubernetes/releases/download/v1.3.0/kubernetes.tar.gz" target="_blank" rel="noopener">kubernetes-v1.3.0</a>, 解压后, server子目录中<code>kubernetes-server-linux-amd64.tar.gz</code>包含了kubernetes需要运行的全部服务程序文件。</p>
+<h4 id="Master"><a href="#Master" class="headerlink" title="Master"></a>Master</h4><h5 id="etcd"><a href="#etcd" class="headerlink" title="etcd"></a>etcd</h5><ul>
+<li><p>下载etcd, 使用版本为3.0.0</p>
+<pre class=" language-shell"><code class="language-shell">curl -L https://github.com/coreos/etcd/releases/download/v3.0.0/etcd-v3.0.0-linux-amd64.tar.gz -o etcd-v3.0.0-linux-amd64.tar.gz</code></pre>
+</li>
+<li><p>将<code>etcd</code>、<code>etcdctl</code>复制到<code>/usr/bin</code>目录下。</p>
+</li>
+<li><p>设置<code>systemd</code>服务文件<code>/usr/lib/systemd/system/etcd.service</code>。</p>
+<p>WorkingDirectory为etcd数据保存的目录, 需要在启动etcd服务之前进行创建。</p>
+<pre><code>[Unit]
+Description=Etcd Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/lib/etcd/
+EnvironmentFile=-/etc/etcd/etcd.conf
+ExecStart=/usr/bin/etcd
+
+[Install]
+WantedBy=multi-user.target</code></pre></li>
+<li><p>通过<code>systemctl start</code>命令启动etcd服务。</p>
+<pre class=" language-shell"><code class="language-shell">systemctl daemon-reload
+systemctl enable etcd.service
+systemctl start etcd.service</code></pre>
+</li>
+<li><p>通过执行<code>etcdctl cluster-health</code>, 可以验证etcd是否正确启动。</p>
+</li>
+</ul>
+<h5 id="kube-apiserver"><a href="#kube-apiserver" class="headerlink" title="kube-apiserver"></a>kube-apiserver</h5><ul>
+<li><p>拷贝<code>kube-apiserver</code>复制到<code>/usr/bin</code>目录。</p>
+</li>
+<li><p>设置<code>systemd</code>服务文件<code>/usr/lib/systemd/system/kube-apiserver.service</code>。</p>
+<pre><code>[Unit]
+Description=Kubernetes API Server
+Documentation=https://github.com/kubernetes/kubernetes
+After=etcd.service
+Wants=etcd.service
+
+[Service]
+EnvironmentFile=/etc/kubernetes/apiserver
+ExecStart=/usr/bin/kube-apiserver $KUBE_API_ARGS
+Restart=on-failure
+Type=notify
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target</code></pre></li>
+<li><p>在配置文件<code>/etc/kubernetes/apiserver</code>中配置<code>kube-apiserver</code>的启动参数。</p>
+<pre><code>KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379 
+               --insecure-bind-address=0.0.0.0
+               --insecure-port=8081 
+               --service-cluster-ip-range=169.169.0.0/16
+               --service-node-port-range=1-65535
+--admission_control=NamespaceLifecycle,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota
+               --logtostderr=false 
+               --log-dir=/var/log/kubernetes 
+               --v=2" </code></pre><ul>
+<li>–etcd_servers: etcd服务的url。</li>
+<li>–service-cluster-ip-range: kubernetes集群中Service虚拟IP地址段范围, 以CIDR格式表示, 该IP范围不能与物理机的真实IP段有重合。</li>
+<li>–service-node-port-range: kubernetes集群中Service可映射的物理机端口号范围, 默认为30000~32767</li>
+<li>–admission_control: kubernetes集群的准入控制设置, 各控制模块以插件的形式依次生效。</li>
+<li>–logtostderr: 设置为false表示将日志写入文件, 不写入stderr。</li>
+<li>–log-dir: 日志目录。</li>
+<li>–v: 日志级别。</li>
+</ul>
+</li>
+</ul>
+<h5 id="kube-controller-manager"><a href="#kube-controller-manager" class="headerlink" title="kube-controller-manager"></a>kube-controller-manager</h5><ul>
+<li><p>拷贝<code>kube-controller-manager</code>复制到<code>/usr/bin</code>目录。</p>
+</li>
+<li><p>设置<code>systemd</code>服务文件<code>/usr/lib/systemd/system/kube-controller-manager.service</code>。</p>
+<pre><code>[Unit]
+Description=Kubernetes Controller Manager
+Documentation=https://github.com/kubernetes/kubernetes
+After=kube-apiserver.service
+Requires=kube-apiserver.service
+
+[Service]
+EnvironmentFile=/etc/kubernetes/controller-manager
+ExecStart=/usr/bin/kube-controller-manager $KUBE_CONTROLLER_MANAGER_ARGS
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target</code></pre></li>
+<li><p>在配置文件<code>/etc/kubernetes/controller-manager</code>中配置<code>kube-controller-manager</code>的启动参数。</p>
+<pre><code>KUBE_CONTROLLER_MANAGER_ARGS="--master=http://127.0.0.1:8081 --logtostderr=false --log-dir=/var/log/kubernetes --v=2"</code></pre></li>
+</ul>
+<h5 id="kube-scheduler"><a href="#kube-scheduler" class="headerlink" title="kube-scheduler"></a>kube-scheduler</h5><ul>
+<li><p>拷贝<code>kube-scheduler</code>复制到<code>/usr/bin</code>目录。</p>
+</li>
+<li><p>设置<code>systemd</code>服务文件<code>/usr/lib/systemd/system/kube-scheduler.service</code>。</p>
+<pre><code>[Unit]
+Description=Kubernetes Scheduler
+Documentation=https://github.com/kubernetes/kubernetes
+After=kube-apiserver.service
+Requires=kube-apiserver.service
+
+[Service]
+EnvironmentFile=/etc/kubernetes/scheduler
+ExecStart=/usr/bin/kube-scheduler $KUBE_SCHEDULER_ARGS
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target</code></pre></li>
+<li><p>在配置文件<code>/etc/kubernetes/scheduler</code>中配置<code>kube-scheduler</code>的启动参数。</p>
+<pre><code>KUBE_SCHEDULER_ARGS="--master=http://127.0.0.1:8081 --logtostderr=false --log-dir=/var/log/kubernetes --v=2"</code></pre></li>
+</ul>
+<h5 id="start"><a href="#start" class="headerlink" title="start"></a>start</h5><ul>
+<li><p>通过<code>systemctl start</code>命令启动以上三个服务。</p>
+<pre><code>systemctl daemon-reload
+systemctl enable &lt;service_name&gt;
+systemctl start &lt;service_name&gt;</code></pre></li>
+<li><p>通过<code>systemctl status &lt;service_name&gt;</code>来验证服务的启动状态, <code>running</code>表示启动成功。</p>
+</li>
+<li><p>将<code>kubectl</code>复制到<code>/usr/bin</code>目录。</p>
+</li>
+<li><p>到此, Master上所需的服务就全部启动完成了。</p>
+</li>
+</ul>
+<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><p>在Node节点上需要预先安装好Docker Daemon并且正常启动。</p>
+<h5 id="kubelet"><a href="#kubelet" class="headerlink" title="kubelet"></a>kubelet</h5><p>kubelet服务依赖于Docker服务。</p>
+<ul>
+<li><p>拷贝<code>kubelet</code>复制到<code>/usr/bin</code>目录。</p>
+</li>
+<li><p>设置<code>systemd</code>服务文件<code>/usr/lib/systemd/system/kubelet.service</code>。</p>
+<pre><code>[Unit]
+Description=Kubernetes Kubelet Server
+Documentation=https://github.com/kubernetes/kubernetes
+After=docker.service
+Requires=docker.service
+
+[Service]
+WorkingDirectory=/var/lib/kubelet
+EnvironmentFile=/etc/kubernetes/kubelet
+ExecStart=/usr/bin/kubelet $KUBELET_ARGS
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target</code></pre></li>
+<li><p>在配置文件<code>/var/lib/kubelet</code>中配置<code>kubelet</code>的启动参数。</p>
+<pre><code>KUBELET_ARGS="--api-servers=http://127.0.0.1:8081 --hostname-override=127.0.0.1 --logtostderr=false --log-dir=/var/log/kubernetes --v=2"</code></pre></li>
+</ul>
+<h5 id="kube-proxy"><a href="#kube-proxy" class="headerlink" title="kube-proxy"></a>kube-proxy</h5><p>kube-proxy服务依赖于network服务。</p>
+<ul>
+<li><p>拷贝<code>kube-proxy</code>复制到<code>/usr/bin</code>目录。</p>
+</li>
+<li><p>设置<code>systemd</code>服务文件<code>/usr/lib/systemd/system/kube-proxy.service</code>。</p>
+<pre><code>[Unit]
+Description=Kubernetes Kube-Proxy Server
+Documentation=https://github.com/kubernetes/kubernetes
+After=network.target
+Requires=network.service
+
+[Service]
+EnvironmentFile=/etc/kubernetes/proxy
+ExecStart=/usr/bin/kube-proxy $KUBE_PROXY_ARGS
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target</code></pre></li>
+<li><p>在配置文件<code>/etc/kubernetes/proxy</code>中配置<code>kube-proxy</code>的启动参数。</p>
+<pre><code>KUBE_PROXY_ARGS="--master=http://127.0.0.1:8081 --logtostderr=false --log-dir=/var/log/kubernetes --v=2"</code></pre></li>
+</ul>
+<h5 id="LAST"><a href="#LAST" class="headerlink" title="LAST"></a>LAST</h5><p>参考<a href="#start" target="_self">start</a>启动kubelet和kube-proxy服务。</p>
+<p>因端口使用的不是默认的8080, 执行<code>alias kubectl='kubectl -s http://localhost:8081'</code>。</p>
+<p>因为kubelet默认采用想Master自动注册本Node的机制, 可直接查看Node的状态, 状态为Ready表示Node已经成功注册并且状态为可用。</p>
+<pre class=" language-shell"><code class="language-shell">kubectl get nodes</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -528,7 +720,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiaofeng333.github.io/2019/12/04/kubernetes-chu-ru-men/">https://xiaofeng333.github.io/2019/12/04/kubernetes-chu-ru-men/</a>
+                    <a href="https://xiaofeng333.github.io/2019/12/11/kubernetes-zhi-an-zhuang-yu-pei-zhi/">https://xiaofeng333.github.io/2019/12/11/kubernetes-zhi-an-zhuang-yu-pei-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -738,7 +930,7 @@
         repo: 'xiaofeng333.github.io',
         owner: 'xiaofeng333',
         admin: "xiaofeng333",
-        id: '2019-12-04T16-37-02',
+        id: '2019-12-11T14-30-08',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -764,28 +956,28 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/12/04/kubernetes-chu-ru-men/">
+                <a href="/2019/12/11/kubernetes-zhi-an-zhuang-yu-pei-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="kubernetes初入门">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="kubernetes之安装与配置">
                         
-                        <span class="card-title">kubernetes初入门</span>
+                        <span class="card-title">kubernetes之安装与配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基本知识在k8s中, Service(服务)是分布式集群架构的核心, 一个Service拥有如下关键特征。
+                            本文为观看Kubernetes权威指南-第二版.pdf第二章的笔记。
+简单的安装方式最简单的安装方式, 仍需修改各组件的启动参数, 才能完成kubernetes集群的配置。
 
-拥有一个唯一指定的名字。
-拥有一个虚拟IP(Cluster IP、Service IP或VIP)和端口号。
-能够提供某种远程服务能
+安装etcd和kubernetes。
+yum install -
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-11
                             </span>
                         <span class="publish-author">
                             
@@ -814,21 +1006,20 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/04/centos-an-zhuang-wen-ti/">
+                <a href="/2019/12/04/kubernetes-zhi-chu-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="centos安装问题">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="kubernetes之初入门">
                         
-                        <span class="card-title">centos安装问题</span>
+                        <span class="card-title">kubernetes之初入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            centos安装问题dracut_initqueue timeout原因是UltroISO在Window下写入U盘的安装文件路径，没有被linux安装程序识别。
-在U盘启动界面，根据提示，按tab/e键，修改系统引导命令行，修改为：
-vml
+                            本文为观看Kubernetes权威指南-第二版.pdf第一章的笔记, 主要是k8s的核心概念。
+概要给pod(其中运行了服务进程容器)贴上label(标签), 然后给相应的Service定义Label Selector(标签选择器), 这样
                         
                     </div>
                     <div class="publish-info">
@@ -846,8 +1037,8 @@ vml
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/kubernetes/">
+                        <span class="chip bg-color">kubernetes</span>
                     </a>
                     
                 </div>
@@ -997,7 +1188,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.4k</span>&nbsp;字
+                class="white-color">19.3k</span>&nbsp;字
             
             
             
