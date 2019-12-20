@@ -4,18 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python-菜鸟教程, java, linux, docker">
-    <meta name="description" content="语法
-注释
-以#开头, 或 ‘’’ 和 “””。
-
-行与缩进
-使用缩进来表示代码块, 同一个代码块的语句必须包含相同的缩进空格数。
-缩进数的空格数不一致，会导致运行错误。
-
-多行语句
-语句很长，可以使用反斜杠\来实现多行语句。
-total ">
+    <meta name="keywords" content="kubernetes之pod, java, linux, docker">
+    <meta name="description" content="定义详解# 版本号
+apiVersion: v1    
+kind: Pod  
+# 元数据
+metadata:
+  # Pod的名称
+  name: string
+  # 所属的命名空间
+  namespace: string    
+ ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +22,7 @@ total ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>python-菜鸟教程 | the next page</title>
+    <title>kubernetes之pod | the next page</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,13 +313,13 @@ total ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        python-菜鸟教程
+                        kubernetes之pod
                     </div>
                 </div>
             </div>
@@ -432,8 +431,8 @@ total ">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/kubernetes/">
+                                <span class="chip bg-color">kubernetes</span>
                             </a>
                         
                     </div>
@@ -448,7 +447,7 @@ total ">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-19
+                    2019-12-13
                 </div>
                 
 
@@ -457,14 +456,14 @@ total ">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    8 分
                 </div>
                 
 				
@@ -480,117 +479,253 @@ total ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><ul>
-<li><p>注释</p>
-<p>以#开头, 或 ‘’’ 和 “””。</p>
-</li>
-<li><p>行与缩进</p>
-<p>使用缩进来表示代码块, 同一个代码块的语句必须包含相同的缩进空格数。</p>
-<p>缩进数的空格数不一致，会导致运行错误。</p>
-</li>
-<li><p>多行语句</p>
-<p>语句很长，可以使用反斜杠\来实现多行语句。</p>
-<pre class=" language-python"><code class="language-python">total <span class="token operator">=</span> item_one <span class="token operator">+</span> \
-        item_two <span class="token operator">+</span> \
-        item_three</code></pre>
-</li>
-<li><p>数字类型</p>
-<p>整数(int)、布尔型(bool)、浮点数(float)和复数(complex)。</p>
-<p>int表示为长整型。</p>
-<p>True 和 False 定义成关键字了，但它们的值还是 1 和 0，它们可以和数字相加。<br>数值的除法包含两个运算符：/ 返回一个浮点数，// 返回一个整数。<br>在混合计算时，Python会把整型转换成为浮点数。</p>
-</li>
-<li><p>字符串</p>
-<p>字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。</p>
-<p>反斜杠可以用来转义，使用r可以让反斜杠不发生转义。</p>
-<p>字符串的截取的语法格式如下：变量[头下标:尾下标:步长]</p>
-</li>
-<li><p>空行</p>
-<p>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
-<p>空行与代码缩进不同，空行并不是Python语法的一部分。</p>
-</li>
-<li><p>Print 输出<br>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上 end=“”</p>
-</li>
-<li><p>import 与 from…import</p>
-<p>import 或者 from…import 来导入相应的模块。</p>
-<p>import导入整个模块。</p>
-<p>from…import从某个模块中导入多个函数。</p>
+                <h3 id="定义详解"><a href="#定义详解" class="headerlink" title="定义详解"></a>定义详解</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 版本号</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1    
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod  
+<span class="token comment" spellcheck="true"># 元数据</span>
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token comment" spellcheck="true"># Pod的名称</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+  <span class="token comment" spellcheck="true"># 所属的命名空间</span>
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> string    
+  <span class="token comment" spellcheck="true"># 自定义标签列表</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>     
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+  <span class="token comment" spellcheck="true"># 自定义注解列表  </span>
+  <span class="token key atrule">annotations</span><span class="token punctuation">:</span>       
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+<span class="token comment" spellcheck="true"># 详细定义    </span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token comment" spellcheck="true"># 容器列表</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>   
+    <span class="token comment" spellcheck="true"># 容器名称</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+    <span class="token comment" spellcheck="true"># 容器镜像名称</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> string
+    <span class="token comment" spellcheck="true"># 镜像拉取策略: Always、Never、IfNotPresent</span>
+    <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> 
+    <span class="token comment" spellcheck="true"># 容器的启动命令列表, 如果不指定, 则使用镜像打包时使用的启动命令</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>string<span class="token punctuation">]</span>    
+    <span class="token comment" spellcheck="true"># 启动命令参数列表</span>
+    <span class="token key atrule">args</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>string<span class="token punctuation">]</span> 
+    <span class="token comment" spellcheck="true"># 工作目录</span>
+    <span class="token key atrule">workingDir</span><span class="token punctuation">:</span> string    
+    <span class="token comment" spellcheck="true"># 挂在到容器内部的存储卷配置</span>
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>   
+      <span class="token comment" spellcheck="true"># 引用Pod定义的共享存储卷的名称, 需使用volumes[]部分定义的共享存储卷名称</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string     
+      <span class="token comment" spellcheck="true"># 存储卷在容器内Mount的绝对路径, 应少于512个字符</span>
+      <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> string    
+      <span class="token comment" spellcheck="true"># 是否为只读模式, 默认为读写模式</span>
+      <span class="token key atrule">readOnly</span><span class="token punctuation">:</span> boolean    
+    <span class="token comment" spellcheck="true"># 容器需要暴露的端口号列表  </span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>       
+      <span class="token comment" spellcheck="true"># 端口的名称</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string 
+      <span class="token comment" spellcheck="true"># 容器需要监听的端口号</span>
+      <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> int 
+      <span class="token comment" spellcheck="true"># 容器所在主机需要监听的端口号, 默认与containerPort相同, 设置hostPort时, 同一宿主机无法启动该容器的第二副本</span>
+      <span class="token key atrule">hostPort</span><span class="token punctuation">:</span> int
+      <span class="token comment" spellcheck="true"># 端口协议, 支持TCP(默认)和UDP</span>
+      <span class="token key atrule">protocol</span><span class="token punctuation">:</span> string     
+    <span class="token comment" spellcheck="true"># 容器运行前需要设置的环境变量列表  </span>
+    <span class="token key atrule">env</span><span class="token punctuation">:</span>      
+      <span class="token comment" spellcheck="true"># 环境变量的名称</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string  
+      <span class="token comment" spellcheck="true"># 环境变量的值</span>
+      <span class="token key atrule">value</span><span class="token punctuation">:</span> string    
+    <span class="token comment" spellcheck="true"># 资源限制和资源请求的设置  </span>
+    <span class="token key atrule">resources</span><span class="token punctuation">:</span>      
+      <span class="token key atrule">limits</span><span class="token punctuation">:</span>  
+        <span class="token comment" spellcheck="true"># CPU限制, 单位为core</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> string    
+        <span class="token comment" spellcheck="true"># 内存限制, 单位可以为MiB/GiB等</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> string  
+      <span class="token comment" spellcheck="true"># 最低要求</span>
+      <span class="token key atrule">requests</span><span class="token punctuation">:</span>        
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> string    
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> string
+    <span class="token comment" spellcheck="true"># 对Pod内容器健康检查的设置    </span>
+    <span class="token key atrule">livenessProbe</span><span class="token punctuation">:</span>     
+      <span class="token key atrule">exec</span><span class="token punctuation">:</span>      
+        <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>string<span class="token punctuation">]</span>  
+      <span class="token key atrule">httpGet</span><span class="token punctuation">:</span>       
+        <span class="token key atrule">path</span><span class="token punctuation">:</span> string
+        <span class="token key atrule">port</span><span class="token punctuation">:</span> number
+        <span class="token key atrule">host</span><span class="token punctuation">:</span> string
+        <span class="token key atrule">scheme</span><span class="token punctuation">:</span> string
+        <span class="token key atrule">HttpHeaders</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+          <span class="token key atrule">value</span><span class="token punctuation">:</span> string
+      <span class="token key atrule">tcpSocket</span><span class="token punctuation">:</span>     
+         <span class="token key atrule">port</span><span class="token punctuation">:</span> number
+       <span class="token comment" spellcheck="true"># 容器启动完成后进行首次探测的时间, 单位为秒  </span>
+       <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">0  </span>
+       <span class="token comment" spellcheck="true"># 容器健康检查的探测等待响应超时时间设置, 单位为秒, 超过该时间, 将重启容器</span>
+       <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">0   </span>
+       <span class="token comment" spellcheck="true"># 容器健康检查的定期探测时间设置, 单位为秒, 默认10秒探测一次</span>
+       <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">0    </span>
+       <span class="token comment" spellcheck="true"># 失败后最少成功几次才会认为容器健康, 最小为1</span>
+       <span class="token key atrule">successThreshold</span><span class="token punctuation">:</span> <span class="token number">0</span>
+       <span class="token comment" spellcheck="true"># 失败多少次后才会重启容器, 默认为3, 最小为1</span>
+       <span class="token key atrule">failureThreshold</span><span class="token punctuation">:</span> <span class="token number">0</span>
+       <span class="token comment" spellcheck="true"># pod的安全设置</span>
+       <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+         privileged<span class="token punctuation">:</span><span class="token boolean important">false</span>
+    <span class="token comment" spellcheck="true"># 重启策略。Always(Pod一旦终止运行, kubelet将会重启它)、OnFailure(非正常结束时, 才会重启该容器)</span>
+    <span class="token comment" spellcheck="true"># Never(Pod终止后, kubelet将退出码报告给Master, 不会再重启该Pod)</span>
+    <span class="token key atrule">restartPolicy</span><span class="token punctuation">:</span> 
+    <span class="token comment" spellcheck="true"># 表示将Node调度到包含这些Label的Node上</span>
+    <span class="token key atrule">nodeSelector</span><span class="token punctuation">:</span> obeject  
+    <span class="token comment" spellcheck="true"># pull镜像时, 使用的secret名称</span>
+    <span class="token key atrule">imagePullSecrets</span><span class="token punctuation">:</span>    
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+    <span class="token comment" spellcheck="true"># 是否使用主机网络模式, 为true则使用宿主机网络, 不再使用Docker网桥</span>
+    hostNetwork<span class="token punctuation">:</span><span class="token boolean important">false     </span>
+    <span class="token comment" spellcheck="true"># 在该Pod上定义的共享存储卷列表</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>       
+      <span class="token comment" spellcheck="true"># 每个共享存储卷名称唯一</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string 
+      <span class="token comment" spellcheck="true"># 与Pod生命周期相同的一个临时目录</span>
+      <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true"># 挂载在所在宿主机的目录</span>
+      <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>      
+        <span class="token key atrule">path</span><span class="token punctuation">:</span> string  
+      <span class="token comment" spellcheck="true"># 挂载集群预定义的secret对象到容器内部  </span>
+      <span class="token key atrule">secret</span><span class="token punctuation">:</span>      
+        <span class="token key atrule">scretname</span><span class="token punctuation">:</span> string  
+        <span class="token key atrule">items</span><span class="token punctuation">:</span>     
+        <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> string
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> string
+      <span class="token comment" spellcheck="true"># 关在集群预定义的configMap到容器内部    </span>
+      <span class="token key atrule">configMap</span><span class="token punctuation">:</span>    
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+        <span class="token key atrule">items</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> string
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> string</code></pre>
+<p>属于一个Pod的多个容器应用之间相互访问仅需要通过localhost就可以通信, 使得这一组容器被绑定在一个环境中。</p>
+<h3 id="静态Pod"><a href="#静态Pod" class="headerlink" title="静态Pod"></a>静态Pod</h3><p>其是由kubelet进行管理的仅存在于特定Node上的Pod, 不能通过API Server进行管理, 无法与ReplicationController、Deployment、DaemonSet进行关联, 并且kubelet无法对它们进行健康检查。</p>
+<p>静态Pod总是由kubelet进行创建, 并且总是在kubelet所在的Node上运行。</p>
+<p>创建静态Pod有两种方式: 配置文件或者HTTP方式。</p>
+<h3 id="Pod的配置管理-ConfigMap"><a href="#Pod的配置管理-ConfigMap" class="headerlink" title="Pod的配置管理-ConfigMap"></a>Pod的配置管理-ConfigMap</h3><h4 id="典型用法"><a href="#典型用法" class="headerlink" title="典型用法"></a>典型用法</h4><ul>
+<li>生成容器内的环境变量。</li>
+<li>设置容器启动命令的启动参数(需设置为环境变量)。</li>
+<li>以volume的形式挂载为容器内部的文件或目录。</li>
+</ul>
+<p>configmap以<code>key:value</code>的形式保存在kubernetes系统中供应用使用, 可以通过<code>yaml</code>或<code>kubectl create configmap</code>命令行的方式来创建ConfigMap。</p>
+<pre class=" language-shell"><code class="language-shell">kubectl create -f cm-appvars.yaml
+kubectl create configmap NAME --from-file=config-files-dir --from-literal=</code></pre>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
+<li><p>通过环境变量获取ConfigMap中的内容。</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">...</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> cm<span class="token punctuation">-</span>test
+    <span class="token key atrule">env</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span><span class="token key atrule">-name</span><span class="token punctuation">:</span> APPLOGLEVEL
+      <span class="token key atrule">valueFrom</span><span class="token punctuation">:</span>
+        <span class="token key atrule">configMapKeyRef</span><span class="token punctuation">:</span>
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> cm<span class="token punctuation">-</span>appvars
+          <span class="token key atrule">value</span><span class="token punctuation">:</span> apploglevel
+    <span class="token punctuation">...</span></code></pre>
 </li>
 </ul>
-<h5 id="Python3-命令行参数"><a href="#Python3-命令行参数" class="headerlink" title="Python3 命令行参数"></a>Python3 命令行参数</h5><p>Python 提供了 getopt 模块来获取命令行参数。</p>
-<h5 id="Python3-基本数据类型"><a href="#Python3-基本数据类型" class="headerlink" title="Python3 基本数据类型"></a>Python3 基本数据类型</h5><p>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p>
-<h6 id="多个变量赋值"><a href="#多个变量赋值" class="headerlink" title="多个变量赋值"></a>多个变量赋值</h6><p>Python允许同时为多个变量赋值, 也可以为多个对象指定多个变量。</p>
-<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> b <span class="token operator">=</span> c <span class="token operator">=</span> <span class="token number">1</span>
-a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'runoob'</span></code></pre>
-<h6 id="标准数据类型"><a href="#标准数据类型" class="headerlink" title="标准数据类型"></a>标准数据类型</h6><p>Python3 的六个标准数据类型中:</p>
 <ul>
-<li><p>不可变数据</p>
-<p>Number、String、Tuple</p>
-</li>
-<li><p>可变数据</p>
-<p>List、Dictionary、Set</p>
-</li>
+<li>通过Volume挂载的方式将ConfigMap中的内容挂载为容器内部的文件或目录。</li>
 </ul>
-<p>内置的 type() 函数可以用来查询变量所指的对象类型, 也可用isinstance来判断。</p>
-<p>type()不会认为子类是一种父类类型, isinstance()会认为子类是一种父类类型。</p>
-<p>一个变量可以通过赋值指向不同类型的对象。</p>
-<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1</span>
-type<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-isinstance<span class="token punctuation">(</span>a<span class="token punctuation">,</span> int<span class="token punctuation">)</span></code></pre>
-<p>可以使用del语句删除一些对象引用。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">del</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d</code></pre>
+<h4 id="限制条件"><a href="#限制条件" class="headerlink" title="限制条件"></a>限制条件</h4><ul>
+<li>ConfigMap必须在Pod之前创建。</li>
+<li>ConfigMap也可以定义为属于某个namespace, 只有处于相同namespace中的Pod可以引用它。</li>
+<li>静态Node无法引用ConfigMap。</li>
+</ul>
+<h3 id="生命周期和重启策略"><a href="#生命周期和重启策略" class="headerlink" title="生命周期和重启策略"></a>生命周期和重启策略</h3><h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><table>
+<thead>
+<tr>
+<th>状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pending</td>
+<td>API Server已创建该Pod, 但Pod内还有一个或多个容器没有创建, 包括正在下载镜像的过程。</td>
+</tr>
+<tr>
+<td>Running</td>
+<td>Pod内所有容器均已创建, 且至少有一个容器处于运行状态、正在启动状态或正在重启状态。</td>
+</tr>
+<tr>
+<td>Succeeded</td>
+<td>Pod内所有容器均成功执行退出, 且不会再重启。</td>
+</tr>
+<tr>
+<td>Failed</td>
+<td>Pod内所有容器均已退出, 但至少有一个容器退出为失败状态。</td>
+</tr>
+<tr>
+<td>Unknown</td>
+<td>由于某种原因无法获取该Pod的状态, 可能由于网络通信不畅导致。</td>
+</tr>
+</tbody></table>
+<h4 id="重启策略"><a href="#重启策略" class="headerlink" title="重启策略"></a>重启策略</h4><p>Pod的重启策略(RestartPolicy)应用于Pod内的所有容器, 并且仅在Pod所处的Node上由<code>kubelet</code>进行判断和重启操作。</p>
 <ul>
-<li><p>List</p>
-<p>列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。</p>
-<p>加号 + 是列表连接运算符，星号 * 是重复操作</p>
+<li>Always: 当容器失效时, 有kubelet自动重启该容器。</li>
+<li>OnFailure:  当容器终止运行且退出码不为0时, 由kubelet自动重启该容器。</li>
+<li>Never: 不论容器运行状态如何, kubelet都不会重启该容器。</li>
+</ul>
+<p>kubelet重启失效容器的时间间隔以sync-frequency乘以2n来计算, 最长延时5分钟, 并且在成功重启后10分钟后重置该时间。</p>
+<p>Pod的重启策略与控制方式息息相关。</p>
+<ul>
+<li>RC和DaemonSet: 必须设置为Always, 需要保证该容器持续运行。</li>
+<li>Job: OnFailure或Never, 确保容器执行完成后不再重启。</li>
+<li>kubelet管理的静态Pod: 在Pod失效时自动重启它。</li>
+</ul>
+<h3 id="健康检查"><a href="#健康检查" class="headerlink" title="健康检查"></a>健康检查</h3><p>可以通过两类探针来检查: LivenessProbe和ReadinessProbe。</p>
+<ul>
+<li><p>LivenessProbe: 用于判断容器是否存活, 当不包含时, 默认返回值永远是”Success”。</p>
+<p>有以下三种实现方式。</p>
+<ul>
+<li>ExecAction: 在容器内部执行一个命令, 如果该命令返回码为0, 则表明容器健康。</li>
+<li>TCPSocketAction: 通过容器的IP地址和端口号执行TCP检查, 如果能建立TCP连接, 则表明容器健康。</li>
+<li>HTTPGetAction: 调用HTTP Get方法, 如果响应码大于等于200且小于等于400, 则认为容器健康。</li>
+</ul>
 </li>
-<li><p>Tuple</p>
-<p>元组的元素不能修改，但其中可变数据可以修改。</p>
-</li>
-<li><p>set</p>
-<p>元素不重复</p>
-<p>创建一个空集合必须用 set()</p>
-</li>
-<li><p>Dictionary</p>
-<p>键(key)必须使用不可变类型。</p>
-<p>在同一个字典中，键(key)必须是唯一的。</p>
+<li><p>ReadinessProbe: 用于判断容器是否启动完成, 可以接受请求。如果检测到失败, <code>Endpoint Controller</code>将从Service的Endpoint找那个删除该容器所在Pod的Endpoint。</p>
 </li>
 </ul>
-<p>​       创建空字典使用 { }</p>
-<h5 id="python解释器"><a href="#python解释器" class="headerlink" title="python解释器"></a>python解释器</h5><p>Python 解释器不止一种哦，有 CPython、IPython、Jython、PyPy 等。</p>
-<p>Jython 是专为 Java 平台设计的 Python 解释器，它把 Python 代码编译成 Java 字节码执行。</p>
-<h5 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h5><p>1.在python中操作集合或字典中不存在的元素会报错。</p>
-<p>2.右边的表达式会在赋值变动之前执行。右边表达式的执行顺序是从左往右的。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">1</span>
-    b <span class="token operator">=</span> <span class="token number">2</span>
-    a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a<span class="token operator">+</span>b
-    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 2</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 3</span></code></pre>
-<p>3.关键字end可以用于将结果输出到同一行，或者在输出的末尾添加不同的字符。</p>
-<p>4.递归以空间换取可读性，当过深时，会造成溢出。</p>
-<h5 id="条件控制"><a href="#条件控制" class="headerlink" title="条件控制"></a>条件控制</h5><h6 id="ifelse"><a href="#ifelse" class="headerlink" title="ifelse"></a>ifelse</h6><p>if语句的关键字为：if – elif – else。</p>
-<h6 id="while"><a href="#while" class="headerlink" title="while"></a>while</h6><p>在while中可添加else的语句块</p>
-<pre class=" language-python"><code class="language-python">count <span class="token operator">=</span> <span class="token number">0</span> 
-<span class="token keyword">while</span> count <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">:</span> 
-    <span class="token keyword">print</span> <span class="token punctuation">(</span>count<span class="token punctuation">,</span> <span class="token string">" 小于 5"</span><span class="token punctuation">)</span> 
-    count <span class="token operator">=</span> count <span class="token operator">+</span> <span class="token number">1</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span> 
-    <span class="token keyword">print</span> <span class="token punctuation">(</span>count<span class="token punctuation">,</span> <span class="token string">" 大于或等于 5"</span><span class="token punctuation">)</span></code></pre>
-<h6 id="for"><a href="#for" class="headerlink" title="for"></a>for</h6><p>for循环可以遍历任何序列的项目，如一个列表或者一个字符串。</p>
-<h6 id="range"><a href="#range" class="headerlink" title="range"></a>range</h6><p>内置range()函数, 会生成数列。</p>
-<h6 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h6><p>pass是空语句，是为了保持程序结构的完整性。</p>
-<h5 id="迭代器与生成器"><a href="#迭代器与生成器" class="headerlink" title="迭代器与生成器"></a>迭代器与生成器</h5><p>1.把一个类作为一个迭代器使用需要在类中实现两个方法 <strong>iter</strong>() 与 <strong>next</strong>() 。</p>
-<p>2.StopIteration 异常用于标识迭代的完成，防止出现无限循环的情况，在 <strong>next</strong>() 方法中我们可以设置在完成指定循环次数后触发 StopIteration 异常来结束迭代。</p>
-<p>3.yield 的作用就是把一个函数变成一个 generator，带有 yield 的函数不再是一个普通函数，Python 解释器会将其视为一个 generator。</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 斐波那契</span>
-<span class="token keyword">def</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span>
-    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>counter <span class="token operator">></span> n<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-            <span class="token keyword">return</span>
-        <span class="token keyword">yield</span> a
-        a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
-        counter <span class="token operator">+=</span> <span class="token number">1</span></code></pre>
+<p>对于每种探测方式, 都需要设置initialDelaySeconds和timeoutSeconds两个参数。</p>
+<h3 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h3><p>Master上的Scheduler服务负责实现Pod的调度。</p>
+<h4 id="NodeSelector-定向调度"><a href="#NodeSelector-定向调度" class="headerlink" title="NodeSelector: 定向调度"></a>NodeSelector: 定向调度</h4><p>通过Node的标签和Pod的<code>nodeSelector</code>属性相匹配, 来达到上述目的。</p>
+<p>如果指定了Pod的nodeSelector, 且集群中不存在包含相应标签的Node, 则即使集群中还有其他可供使用的Node, 这个Pod也无法被成功调度。</p>
+<h4 id="NodeAffinity-亲和性调度"><a href="#NodeAffinity-亲和性调度" class="headerlink" title="NodeAffinity: 亲和性调度"></a>NodeAffinity: 亲和性调度</h4><p>替换NodeSelector的下一代调度策略。</p>
+<p>NodeAffinity增加了In、NotIn、Exiss、DoesNotExist、Gt、Lt等操作符来选择Node, 能够使调度策略更加灵活。</p>
+<p>如果同时设置了NodeSelector和NodeAffinity, 则系统将需要同时满足两者的设置才能进行调度。</p>
+<h4 id="DaemonSet-特定场景调度"><a href="#DaemonSet-特定场景调度" class="headerlink" title="DaemonSet: 特定场景调度"></a>DaemonSet: 特定场景调度</h4><p>用于管理集群中每个Node上仅运行一份Pod的副本实例。</p>
+<ul>
+<li>在每个Node上运行一个GlusterFS存储或Ceph存储的daemon进程。</li>
+<li>在每个Node上运行一个日志采集程序, 如fluentd或logstach。</li>
+<li>在每个Node上运行一个健康程序, 采集该Node的运行性能数据。</li>
+</ul>
+<p>也可以在<code>DaemonSet</code>的yaml中使用NodeSelector或NodeAffinity来指定满足条件的Node范围进行调度。</p>
+<h4 id="Job-批处理调度"><a href="#Job-批处理调度" class="headerlink" title="Job: 批处理调度"></a>Job: 批处理调度</h4><ul>
+<li>Job Template Expansion模式: 一个Job对象对应一个待处理的Work item。</li>
+<li>Queue with Pod Per Work Item模式: 采用一个队列存放Work Item, 一个Job作为消费者去完成这些Work Item, 在这种某事下, Job启动N个Pod, 每个Pod对应一个Work Item。</li>
+<li>Queue with Variable Pod Count模式: 与上面模式不同的是, Job启动的Pod数量是可变的。</li>
+</ul>
+<h3 id="扩容和缩容"><a href="#扩容和缩容" class="headerlink" title="扩容和缩容"></a>扩容和缩容</h3><ul>
+<li><p>通过rc的scale机制来完成这些工作。</p>
+<pre class=" language-shell"><code class="language-shell">kubectl scale rc redis --replicas= 3</code></pre>
+</li>
+<li><p>使用HPA(HorizontalPodAutoscaler)。</p>
+</li>
+</ul>
+<h3 id="滚动升级"><a href="#滚动升级" class="headerlink" title="滚动升级"></a>滚动升级</h3><p>使用rolling-update命令。</p>
+<pre class=" language-shell"><code class="language-shell">kubectl rolling-update redis -f redis-controller-v2.yaml
+kubectl rolling-update redis --image=redis-master:2.0</code></pre>
+<p>定义v2版本的ReplicationController.yaml时需注意。</p>
+<ul>
+<li>RC的name不能与旧的RC名字相同。</li>
+<li>在selector中至少有一个Label应与旧的不同, 以便区分。</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -634,7 +769,7 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/">https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/</a>
+                    <a href="https://xiaofeng333.github.io/2019/12/13/kubernetes-zhi-pod/">https://xiaofeng333.github.io/2019/12/13/kubernetes-zhi-pod/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -672,8 +807,8 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/kubernetes/">
+                                    <span class="chip bg-color">kubernetes</span>
                                 </a>
                             
                         </div>
@@ -844,7 +979,7 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
         repo: 'xiaofeng333.github.io',
         owner: 'xiaofeng333',
         admin: "xiaofeng333",
-        id: '2019-05-19T18-10-55',
+        id: '2019-12-13T19-58-25',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -869,27 +1004,26 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/05/19/spring-boot-maven-plugin-jian-jie/">
+                <a href="/2019/12/16/kubernetes-zhi-service/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="spring boot maven plugin简介">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="kubernetes之service">
                         
-                        <span class="card-title">spring boot maven plugin简介</span>
+                        <span class="card-title">kubernetes之service</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Spring Boot Maven Plugin简介在pom.xml中引入&lt;build>
-  &lt;plugins>
-   &lt;plugin>
-            &lt;groupId>org.springframewor
+                            通过创建Service, 可以为一组具有相同功能的容器应用提供一个统一的入口地址, 并将请求负载分发到后端的各个容器应用上。
+定义详解apiVersion: v1      // Required
+kind: Service       /
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-16
                         </span>
                         <span class="publish-author">
                             
@@ -902,8 +1036,8 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/maven/">
-                        <span class="chip bg-color">maven</span>
+                    <a href="/tags/kubernetes/">
+                        <span class="chip bg-color">kubernetes</span>
                     </a>
                     
                 </div>
@@ -917,28 +1051,26 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/19/maven-xiao-zhi-shi-zi-yuan-wen-jian-bian-liang-ti-huan/">
+                <a href="/2019/12/13/kubernetes-zhi-kubectl/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="maven小知识-资源文件变量替换">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="kubernetes之kubectl">
                         
-                        <span class="card-title">maven小知识-资源文件变量替换</span>
+                        <span class="card-title">kubernetes之kubectl</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            项目在不同环境下部署时，使用的属性是不同的，这时可以使用MAVEN进行资源文件的过滤，在打包时传递参数，打出适合部署在对应环境的资源文件。
-如定义了如下资源文件:
-spring.env=${env}
-pom文件中可添加如下信息
-&lt;pr
+                            命令行语法kubectl [command] [TYPE] [NAME] [flags]
+
+command: 子命令, 用于操作kubernetes集群资源对象的命令, 如create、delete、describe、get、apply等。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-13
                             </span>
                         <span class="publish-author">
                             
@@ -951,8 +1083,8 @@ pom文件中可添加如下信息
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/maven/">
-                        <span class="chip bg-color">maven</span>
+                    <a href="/tags/kubernetes/">
+                        <span class="chip bg-color">kubernetes</span>
                     </a>
                     
                 </div>

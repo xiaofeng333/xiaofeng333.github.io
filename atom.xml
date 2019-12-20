@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaofeng333.github.io/"/>
-  <updated>2019-12-12T12:38:17.633Z</updated>
+  <updated>2019-12-17T13:00:09.526Z</updated>
   <id>https://xiaofeng333.github.io/</id>
   
   <author>
@@ -17,11 +17,87 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>kubernetes之service</title>
+    <link href="https://xiaofeng333.github.io/2019/12/16/kubernetes-zhi-service/"/>
+    <id>https://xiaofeng333.github.io/2019/12/16/kubernetes-zhi-service/</id>
+    <published>2019-12-16T12:37:09.000Z</published>
+    <updated>2019-12-17T13:00:09.526Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;通过创建Service, 可以为一组具有相同功能的容器应用提供一个统一的入口地址, 并将请求负载分发到后端的各个容器应用上。&lt;/p&gt;
+&lt;h3 id=&quot;定义详解&quot;&gt;&lt;a href=&quot;#定义详解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="kubernetes" scheme="https://xiaofeng333.github.io/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes之pod</title>
+    <link href="https://xiaofeng333.github.io/2019/12/13/kubernetes-zhi-pod/"/>
+    <id>https://xiaofeng333.github.io/2019/12/13/kubernetes-zhi-pod/</id>
+    <published>2019-12-13T11:58:25.000Z</published>
+    <updated>2019-12-16T12:35:58.118Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;定义详解&quot;&gt;&lt;a href=&quot;#定义详解&quot; class=&quot;headerlink&quot; title=&quot;定义详解&quot;&gt;&lt;/a&gt;定义详解&lt;/h3&gt;&lt;pre class=&quot; language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="kubernetes" scheme="https://xiaofeng333.github.io/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes之kubectl</title>
+    <link href="https://xiaofeng333.github.io/2019/12/13/kubernetes-zhi-kubectl/"/>
+    <id>https://xiaofeng333.github.io/2019/12/13/kubernetes-zhi-kubectl/</id>
+    <published>2019-12-13T03:15:58.000Z</published>
+    <updated>2019-12-13T05:57:14.223Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;命令行语法&quot;&gt;&lt;a href=&quot;#命令行语法&quot; class=&quot;headerlink&quot; title=&quot;命令行语法&quot;&gt;&lt;/a&gt;命令行语法&lt;/h3&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="kubernetes" scheme="https://xiaofeng333.github.io/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>kubernetes之安装与配置</title>
     <link href="https://xiaofeng333.github.io/2019/12/11/kubernetes-zhi-an-zhuang-yu-pei-zhi/"/>
     <id>https://xiaofeng333.github.io/2019/12/11/kubernetes-zhi-an-zhuang-yu-pei-zhi/</id>
     <published>2019-12-11T06:30:08.000Z</published>
-    <updated>2019-12-12T12:38:17.633Z</updated>
+    <updated>2019-12-16T02:24:18.505Z</updated>
     
     <summary type="html">
     
@@ -301,6 +377,31 @@
   </entry>
   
   <entry>
+    <title>spring boot maven plugin简介</title>
+    <link href="https://xiaofeng333.github.io/2019/05/19/spring-boot-maven-plugin-jian-jie/"/>
+    <id>https://xiaofeng333.github.io/2019/05/19/spring-boot-maven-plugin-jian-jie/</id>
+    <published>2019-05-19T10:10:55.000Z</published>
+    <updated>2019-12-04T09:20:18.980Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Spring-Boot-Maven-Plugin简介&quot;&gt;&lt;a href=&quot;#Spring-Boot-Maven-Plugin简介&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot Maven Plugin简介&quot;&gt;&lt;/a&gt;Spring
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python-菜鸟教程</title>
     <link href="https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/"/>
     <id>https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/</id>
@@ -324,31 +425,6 @@
     
     
       <category term="python" scheme="https://xiaofeng333.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spring boot maven plugin简介</title>
-    <link href="https://xiaofeng333.github.io/2019/05/19/spring-boot-maven-plugin-jian-jie/"/>
-    <id>https://xiaofeng333.github.io/2019/05/19/spring-boot-maven-plugin-jian-jie/</id>
-    <published>2019-05-19T10:10:55.000Z</published>
-    <updated>2019-12-04T09:20:18.980Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Spring-Boot-Maven-Plugin简介&quot;&gt;&lt;a href=&quot;#Spring-Boot-Maven-Plugin简介&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot Maven Plugin简介&quot;&gt;&lt;/a&gt;Spring
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
     
   </entry>
   
@@ -451,82 +527,6 @@
     
     
       <category term="spring security" scheme="https://xiaofeng333.github.io/tags/spring-security/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spring security总结</title>
-    <link href="https://xiaofeng333.github.io/2019/03/10/spring-security-zong-jie/"/>
-    <id>https://xiaofeng333.github.io/2019/03/10/spring-security-zong-jie/</id>
-    <published>2019-03-10T08:26:09.000Z</published>
-    <updated>2019-12-04T09:21:32.790Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h4&gt;&lt;p&gt;应用程序安全性可以归结为差不多两个独立的问题：身份验证（你是谁？）和授权（你可以做什么？）。&lt;/p&gt;
-&lt;p&gt;Spring
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="spring security" scheme="https://xiaofeng333.github.io/tags/spring-security/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker开发指南阅读总结</title>
-    <link href="https://xiaofeng333.github.io/2019/02/25/docker-kai-fa-zhi-nan-yue-du-zong-jie/"/>
-    <id>https://xiaofeng333.github.io/2019/02/25/docker-kai-fa-zhi-nan-yue-du-zong-jie/</id>
-    <published>2019-02-25T15:03:26.000Z</published>
-    <updated>2019-12-04T09:15:45.988Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="docker" scheme="https://xiaofeng333.github.io/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>maven实战阅读总结</title>
-    <link href="https://xiaofeng333.github.io/2019/02/17/maven-shi-zhan-yue-du-zong-jie/"/>
-    <id>https://xiaofeng333.github.io/2019/02/17/maven-shi-zhan-yue-du-zong-jie/</id>
-    <published>2019-02-17T12:40:27.000Z</published>
-    <updated>2019-12-04T09:17:32.986Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="maven" scheme="https://xiaofeng333.github.io/tags/maven/"/>
     
   </entry>
   

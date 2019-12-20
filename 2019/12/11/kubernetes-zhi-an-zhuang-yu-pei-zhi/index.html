@@ -451,14 +451,14 @@ yum install -">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 				
@@ -677,6 +677,19 @@ WantedBy=multi-user.target</code></pre></li>
 <p>因端口使用的不是默认的8080, 执行<code>alias kubectl='kubectl -s http://localhost:8081'</code>。</p>
 <p>因为kubelet默认采用想Master自动注册本Node的机制, 可直接查看Node的状态, 状态为Ready表示Node已经成功注册并且状态为可用。</p>
 <pre class=" language-shell"><code class="language-shell">kubectl get nodes</code></pre>
+<h4 id="Q-amp-A-1"><a href="#Q-amp-A-1" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h4><ol>
+<li><p>出现问题, 非预期表现。</p>
+<p>使用<code>journalctl -xe</code>查看详细报错信息, 针对性解决。</p>
+</li>
+<li></li>
+</ol>
+<h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><ul>
+<li><p>仍需关注的点包括安全设置, 其支持<code>基于CA签名的数字证书认证方式</code>和<code>基于HTTP BASE或TOKEN的简单认证方式</code>。</p>
+</li>
+<li><p>在多个Node组成的Kubernetes集群内, 跨主机的容器间网络互通式Kubernetes集群能够正常工作的前提条件。Kubernetes本身并不会对跨主机网络进行设置, 这需要额外的工具来实现, 开源工具包括flannel、Open vSwitch、Weave、Calico等都能够实现跨主机的容器间网络互通。</p>
+<p>也可以通过在每个Node上添加其他Node上的docker0的静态路由规则, 将不同物理机的docker0网桥互联互通。</p>
+</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -951,34 +964,31 @@ WantedBy=multi-user.target</code></pre></li>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/11/kubernetes-zhi-an-zhuang-yu-pei-zhi/">
+                <a href="/2019/12/13/kubernetes-zhi-kubectl/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="kubernetes之安装与配置">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="kubernetes之kubectl">
                         
-                        <span class="card-title">kubernetes之安装与配置</span>
+                        <span class="card-title">kubernetes之kubectl</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文为观看Kubernetes权威指南-第二版.pdf第二章的笔记。
-简单的安装方式最简单的安装方式, 仍需修改各组件的启动参数, 才能完成kubernetes集群的配置。
+                            命令行语法kubectl [command] [TYPE] [NAME] [flags]
 
-安装etcd和kubernetes。
-yum install -
+command: 子命令, 用于操作kubernetes集群资源对象的命令, 如create、delete、describe、get、apply等。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-13
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -987,7 +997,6 @@ yum install -
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1188,7 +1197,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">19.3k</span>&nbsp;字
+                class="white-color">23k</span>&nbsp;字
             
             
             

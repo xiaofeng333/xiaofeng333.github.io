@@ -4,18 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python-菜鸟教程, java, linux, docker">
-    <meta name="description" content="语法
-注释
-以#开头, 或 ‘’’ 和 “””。
-
-行与缩进
-使用缩进来表示代码块, 同一个代码块的语句必须包含相同的缩进空格数。
-缩进数的空格数不一致，会导致运行错误。
-
-多行语句
-语句很长，可以使用反斜杠\来实现多行语句。
-total ">
+    <meta name="keywords" content="kubernetes之service, java, linux, docker">
+    <meta name="description" content="通过创建Service, 可以为一组具有相同功能的容器应用提供一个统一的入口地址, 并将请求负载分发到后端的各个容器应用上。
+定义详解apiVersion: v1      // Required
+kind: Service       /">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +15,7 @@ total ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>python-菜鸟教程 | the next page</title>
+    <title>kubernetes之service | the next page</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,13 +306,13 @@ total ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        python-菜鸟教程
+                        kubernetes之service
                     </div>
                 </div>
             </div>
@@ -432,8 +424,8 @@ total ">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/kubernetes/">
+                                <span class="chip bg-color">kubernetes</span>
                             </a>
                         
                     </div>
@@ -448,7 +440,7 @@ total ">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-19
+                    2019-12-16
                 </div>
                 
 
@@ -457,14 +449,14 @@ total ">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    855
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 				
@@ -480,117 +472,84 @@ total ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><ul>
-<li><p>注释</p>
-<p>以#开头, 或 ‘’’ 和 “””。</p>
+                <p>通过创建Service, 可以为一组具有相同功能的容器应用提供一个统一的入口地址, 并将请求负载分发到后端的各个容器应用上。</p>
+<h3 id="定义详解"><a href="#定义详解" class="headerlink" title="定义详解"></a>定义详解</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1      // Required
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service       // Required
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>           // Required
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> string      // Required
+  <span class="token comment" spellcheck="true"># 不指定使用"default"的命名空间</span>
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> string // Required
+  <span class="token comment" spellcheck="true"># 自定义标签列表</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+  <span class="token comment" spellcheck="true"># 自定义注解属性列表  </span>
+  <span class="token key atrule">annotations</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+  <span class="token comment" spellcheck="true"># 详细描述  </span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>             // Required
+  <span class="token comment" spellcheck="true"># 选择具有指定Label标签的Pod作为管理范围</span>
+  <span class="token key atrule">selectors</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>   // Required
+  <span class="token comment" spellcheck="true"># 指定Service的访问方式, 默认为ClusterIP(虚拟的服务IP地址)。还可使用NodePort(宿主机IP+端口即可访问), LoadBalancer(使用外接负载均衡器完成到服务的负载分发)</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> string    // Required
+  <span class="token comment" spellcheck="true"># 当type为LoadBanlancer时, 需要指定。NodePort时如果不指定, 系统自定进行分配。</span>
+  <span class="token key atrule">clusterIP</span><span class="token punctuation">:</span> string
+  <span class="token comment" spellcheck="true"># 可选值为ClientIP, 表示将同一客户端的请求转发到同一后端Pod, 默认为空。</span>
+  <span class="token key atrule">sessionAffinity</span><span class="token punctuation">:</span> string
+  <span class="token comment" spellcheck="true"># service需要暴露的端口列表</span>
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+    <span class="token comment" spellcheck="true"># 端口协议, TCP/UDP</span>
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> string
+    <span class="token comment" spellcheck="true"># 服务监听的端口号</span>
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> int
+    <span class="token comment" spellcheck="true"># 转发到后端Pod的端口号</span>
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> int
+    <span class="token comment" spellcheck="true"># 当type为NodePort时, 映射到物理机的端口号。</span>
+    <span class="token key atrule">nodePort</span><span class="token punctuation">:</span> int
+  <span class="token comment" spellcheck="true"># 当type为LoadBalancer时, 用于设置外部负载均衡器的地址。  </span>
+  <span class="token key atrule">status</span><span class="token punctuation">:</span>
+    <span class="token key atrule">loadBalancer</span><span class="token punctuation">:</span>
+      <span class="token key atrule">ingress</span><span class="token punctuation">:</span>
+        <span class="token key atrule">ip</span><span class="token punctuation">:</span> string
+        <span class="token key atrule">hostname</span><span class="token punctuation">:</span> string                                                                </code></pre>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>使用expose快速创建Service的方法。</p>
+<pre class=" language-shell"><code class="language-shell">kubectl expose rc webapp</code></pre>
+<p>还可以通过上述配置文件来定义service。</p>
+<pre class=" language-shell"><code class="language-shell">kubectl create -f webapp-svc.yaml</code></pre>
+<h4 id="负载分发策略"><a href="#负载分发策略" class="headerlink" title="负载分发策略"></a>负载分发策略</h4><ul>
+<li><p>RoundRobin: 轮询模式, 即轮询将请求转发到后端的各个Pod上。</p>
 </li>
-<li><p>行与缩进</p>
-<p>使用缩进来表示代码块, 同一个代码块的语句必须包含相同的缩进空格数。</p>
-<p>缩进数的空格数不一致，会导致运行错误。</p>
+<li><p>SessionAffinity: 基于客户端的IP地址进行会话保持的模式, 可将sessionAffinity设置为<code>ClientIP</code>来启用。</p>
 </li>
-<li><p>多行语句</p>
-<p>语句很长，可以使用反斜杠\来实现多行语句。</p>
-<pre class=" language-python"><code class="language-python">total <span class="token operator">=</span> item_one <span class="token operator">+</span> \
-        item_two <span class="token operator">+</span> \
-        item_three</code></pre>
-</li>
-<li><p>数字类型</p>
-<p>整数(int)、布尔型(bool)、浮点数(float)和复数(complex)。</p>
-<p>int表示为长整型。</p>
-<p>True 和 False 定义成关键字了，但它们的值还是 1 和 0，它们可以和数字相加。<br>数值的除法包含两个运算符：/ 返回一个浮点数，// 返回一个整数。<br>在混合计算时，Python会把整型转换成为浮点数。</p>
-</li>
-<li><p>字符串</p>
-<p>字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。</p>
-<p>反斜杠可以用来转义，使用r可以让反斜杠不发生转义。</p>
-<p>字符串的截取的语法格式如下：变量[头下标:尾下标:步长]</p>
-</li>
-<li><p>空行</p>
-<p>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
-<p>空行与代码缩进不同，空行并不是Python语法的一部分。</p>
-</li>
-<li><p>Print 输出<br>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上 end=“”</p>
-</li>
-<li><p>import 与 from…import</p>
-<p>import 或者 from…import 来导入相应的模块。</p>
-<p>import导入整个模块。</p>
-<p>from…import从某个模块中导入多个函数。</p>
+<li><p>自己控制负载均衡策略: 将Service的ClusterIP设置为<code>None</code>(无入口IP地址), 仅通过Label Selector将后端的Pod列表返回给调用的客户端。</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">...</span>
+<span class="token key atrule">clusterIP</span><span class="token punctuation">:</span> None
+<span class="token punctuation">...</span></code></pre>
 </li>
 </ul>
-<h5 id="Python3-命令行参数"><a href="#Python3-命令行参数" class="headerlink" title="Python3 命令行参数"></a>Python3 命令行参数</h5><p>Python 提供了 getopt 模块来获取命令行参数。</p>
-<h5 id="Python3-基本数据类型"><a href="#Python3-基本数据类型" class="headerlink" title="Python3 基本数据类型"></a>Python3 基本数据类型</h5><p>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p>
-<h6 id="多个变量赋值"><a href="#多个变量赋值" class="headerlink" title="多个变量赋值"></a>多个变量赋值</h6><p>Python允许同时为多个变量赋值, 也可以为多个对象指定多个变量。</p>
-<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> b <span class="token operator">=</span> c <span class="token operator">=</span> <span class="token number">1</span>
-a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'runoob'</span></code></pre>
-<h6 id="标准数据类型"><a href="#标准数据类型" class="headerlink" title="标准数据类型"></a>标准数据类型</h6><p>Python3 的六个标准数据类型中:</p>
+<h4 id="访问外部服务"><a href="#访问外部服务" class="headerlink" title="访问外部服务"></a>访问外部服务</h4><p>定义一个不带标签选择器的Service, 即无法选择后端的Pod, 此时系统不会自动创建EndPoint, 因此手动创建一个与Service同名的EndPoint, 用于指向实际的后端访问地址。</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">kind</span><span class="token punctuation">:</span> Endpoints
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>service
+<span class="token key atrule">subsets</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">adresses</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">IP</span><span class="token punctuation">:</span> 1.2.3.4
+      <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span></code></pre>
+<h3 id="DNS服务搭建"><a href="#DNS服务搭建" class="headerlink" title="DNS服务搭建"></a>DNS服务搭建</h3><p>kubernetes提供的虚拟DNS服务名为skydns, 由四个组件组成。</p>
 <ul>
-<li><p>不可变数据</p>
-<p>Number、String、Tuple</p>
-</li>
-<li><p>可变数据</p>
-<p>List、Dictionary、Set</p>
-</li>
+<li>etcd: DNS存储。</li>
+<li>kube2sky: 将kubernetes Master的Service注册到etcd。</li>
+<li>skyDNS: 提供DNS域名解析服务。</li>
+<li>healthz: 提供对skydns服务的健康检查功能。</li>
 </ul>
-<p>内置的 type() 函数可以用来查询变量所指的对象类型, 也可用isinstance来判断。</p>
-<p>type()不会认为子类是一种父类类型, isinstance()会认为子类是一种父类类型。</p>
-<p>一个变量可以通过赋值指向不同类型的对象。</p>
-<pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1</span>
-type<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-isinstance<span class="token punctuation">(</span>a<span class="token punctuation">,</span> int<span class="token punctuation">)</span></code></pre>
-<p>可以使用del语句删除一些对象引用。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">del</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d</code></pre>
-<ul>
-<li><p>List</p>
-<p>列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。</p>
-<p>加号 + 是列表连接运算符，星号 * 是重复操作</p>
-</li>
-<li><p>Tuple</p>
-<p>元组的元素不能修改，但其中可变数据可以修改。</p>
-</li>
-<li><p>set</p>
-<p>元素不重复</p>
-<p>创建一个空集合必须用 set()</p>
-</li>
-<li><p>Dictionary</p>
-<p>键(key)必须使用不可变类型。</p>
-<p>在同一个字典中，键(key)必须是唯一的。</p>
-</li>
-</ul>
-<p>​       创建空字典使用 { }</p>
-<h5 id="python解释器"><a href="#python解释器" class="headerlink" title="python解释器"></a>python解释器</h5><p>Python 解释器不止一种哦，有 CPython、IPython、Jython、PyPy 等。</p>
-<p>Jython 是专为 Java 平台设计的 Python 解释器，它把 Python 代码编译成 Java 字节码执行。</p>
-<h5 id="TIP"><a href="#TIP" class="headerlink" title="TIP"></a>TIP</h5><p>1.在python中操作集合或字典中不存在的元素会报错。</p>
-<p>2.右边的表达式会在赋值变动之前执行。右边表达式的执行顺序是从左往右的。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">1</span>
-    b <span class="token operator">=</span> <span class="token number">2</span>
-    a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a<span class="token operator">+</span>b
-    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 2</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 3</span></code></pre>
-<p>3.关键字end可以用于将结果输出到同一行，或者在输出的末尾添加不同的字符。</p>
-<p>4.递归以空间换取可读性，当过深时，会造成溢出。</p>
-<h5 id="条件控制"><a href="#条件控制" class="headerlink" title="条件控制"></a>条件控制</h5><h6 id="ifelse"><a href="#ifelse" class="headerlink" title="ifelse"></a>ifelse</h6><p>if语句的关键字为：if – elif – else。</p>
-<h6 id="while"><a href="#while" class="headerlink" title="while"></a>while</h6><p>在while中可添加else的语句块</p>
-<pre class=" language-python"><code class="language-python">count <span class="token operator">=</span> <span class="token number">0</span> 
-<span class="token keyword">while</span> count <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">:</span> 
-    <span class="token keyword">print</span> <span class="token punctuation">(</span>count<span class="token punctuation">,</span> <span class="token string">" 小于 5"</span><span class="token punctuation">)</span> 
-    count <span class="token operator">=</span> count <span class="token operator">+</span> <span class="token number">1</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span> 
-    <span class="token keyword">print</span> <span class="token punctuation">(</span>count<span class="token punctuation">,</span> <span class="token string">" 大于或等于 5"</span><span class="token punctuation">)</span></code></pre>
-<h6 id="for"><a href="#for" class="headerlink" title="for"></a>for</h6><p>for循环可以遍历任何序列的项目，如一个列表或者一个字符串。</p>
-<h6 id="range"><a href="#range" class="headerlink" title="range"></a>range</h6><p>内置range()函数, 会生成数列。</p>
-<h6 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h6><p>pass是空语句，是为了保持程序结构的完整性。</p>
-<h5 id="迭代器与生成器"><a href="#迭代器与生成器" class="headerlink" title="迭代器与生成器"></a>迭代器与生成器</h5><p>1.把一个类作为一个迭代器使用需要在类中实现两个方法 <strong>iter</strong>() 与 <strong>next</strong>() 。</p>
-<p>2.StopIteration 异常用于标识迭代的完成，防止出现无限循环的情况，在 <strong>next</strong>() 方法中我们可以设置在完成指定循环次数后触发 StopIteration 异常来结束迭代。</p>
-<p>3.yield 的作用就是把一个函数变成一个 generator，带有 yield 的函数不再是一个普通函数，Python 解释器会将其视为一个 generator。</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 斐波那契</span>
-<span class="token keyword">def</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span>
-    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>counter <span class="token operator">></span> n<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-            <span class="token keyword">return</span>
-        <span class="token keyword">yield</span> a
-        a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
-        counter <span class="token operator">+=</span> <span class="token number">1</span></code></pre>
+<h3 id="Ingress-HTTP-7层路由机制"><a href="#Ingress-HTTP-7层路由机制" class="headerlink" title="Ingress: HTTP 7层路由机制"></a>Ingress: HTTP 7层路由机制</h3><p>实现HTTP层的业务路由机制, 即不同的URL地址对应到不同的后端服务或者虚拟服务器。</p>
+<p>在kubernetes集群中, Ingress的实现需要通过Ingress的定义与Ingress Controller的定义结合起来, 才能形成完整的HTTP负载分发功能。</p>
+<h4 id="创建Ingress-Controller"><a href="#创建Ingress-Controller" class="headerlink" title="创建Ingress Controller"></a>创建Ingress Controller</h4><p>在定义Ingress之前, 需要先部署Ingress Controller, 以实现为所有后端Service提供一个统一的入口。</p>
+<p>Ingress Controller需要实现基于不同HTTP URL向后转发的负载分发规则, 也可设置能够提供该类型HTTP路由的LoadBalancer为Ingress Controller。</p>
+<p>Ingress Controller以Pod的形式运行, 监控apiserver的/ingress接口, 如果service发生变化, 则Ingress Controller应自动更新其转发规则。</p>
+<h4 id="定义Ingress"><a href="#定义Ingress" class="headerlink" title="定义Ingress"></a>定义Ingress</h4><p>设置到后端Service的转发规则。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -634,7 +593,7 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/">https://xiaofeng333.github.io/2019/05/19/python-cai-niao-jiao-cheng/</a>
+                    <a href="https://xiaofeng333.github.io/2019/12/16/kubernetes-zhi-service/">https://xiaofeng333.github.io/2019/12/16/kubernetes-zhi-service/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -672,8 +631,8 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/kubernetes/">
+                                    <span class="chip bg-color">kubernetes</span>
                                 </a>
                             
                         </div>
@@ -844,7 +803,7 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
         repo: 'xiaofeng333.github.io',
         owner: 'xiaofeng333',
         admin: "xiaofeng333",
-        id: '2019-05-19T18-10-55',
+        id: '2019-12-16T20-37-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -865,32 +824,32 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/05/19/spring-boot-maven-plugin-jian-jie/">
+                <a href="/2019/12/16/kubernetes-zhi-service/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="spring boot maven plugin简介">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="kubernetes之service">
                         
-                        <span class="card-title">spring boot maven plugin简介</span>
+                        <span class="card-title">kubernetes之service</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Spring Boot Maven Plugin简介在pom.xml中引入&lt;build>
-  &lt;plugins>
-   &lt;plugin>
-            &lt;groupId>org.springframewor
+                            通过创建Service, 可以为一组具有相同功能的容器应用提供一个统一的入口地址, 并将请求负载分发到后端的各个容器应用上。
+定义详解apiVersion: v1      // Required
+kind: Service       /
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -899,11 +858,12 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/maven/">
-                        <span class="chip bg-color">maven</span>
+                    <a href="/tags/kubernetes/">
+                        <span class="chip bg-color">kubernetes</span>
                     </a>
                     
                 </div>
@@ -917,28 +877,33 @@ isinstance<span class="token punctuation">(</span>a<span class="token punctuatio
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/19/maven-xiao-zhi-shi-zi-yuan-wen-jian-bian-liang-ti-huan/">
+                <a href="/2019/12/13/kubernetes-zhi-pod/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="maven小知识-资源文件变量替换">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="kubernetes之pod">
                         
-                        <span class="card-title">maven小知识-资源文件变量替换</span>
+                        <span class="card-title">kubernetes之pod</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            项目在不同环境下部署时，使用的属性是不同的，这时可以使用MAVEN进行资源文件的过滤，在打包时传递参数，打出适合部署在对应环境的资源文件。
-如定义了如下资源文件:
-spring.env=${env}
-pom文件中可添加如下信息
-&lt;pr
+                            定义详解# 版本号
+apiVersion: v1    
+kind: Pod  
+# 元数据
+metadata:
+  # Pod的名称
+  name: string
+  # 所属的命名空间
+  namespace: string    
+ 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-13
                             </span>
                         <span class="publish-author">
                             
@@ -951,8 +916,8 @@ pom文件中可添加如下信息
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/maven/">
-                        <span class="chip bg-color">maven</span>
+                    <a href="/tags/kubernetes/">
+                        <span class="chip bg-color">kubernetes</span>
                     </a>
                     
                 </div>
